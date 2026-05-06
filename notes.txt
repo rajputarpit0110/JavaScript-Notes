@@ -1,0 +1,23 @@
+                           Lecture 01
+
+ek .txt file .js file me ye difference hai ki js file me har word ka ek mtlb hoga which is 
+understandable by compiler
+
+js compiler softwares - node.js , deno.js 
+
+                            Lecture 02
+
+
+                            Lecture 03
+
+
+                            Lecture 04
+
+
+Variables can be declared using three ways -- const , let , var
+
+    prefer not to use var because of issue in block scope and functional scope
+
+    agar kisi variable ko declare krke chor dete hai in js aur value assign nhi krte then
+    its value is undefined
+    
