@@ -20,4 +20,76 @@ Variables can be declared using three ways -- const , let , var
 
     agar kisi variable ko declare krke chor dete hai in js aur value assign nhi krte then
     its value is undefined
-    
+
+
+                                    Lecture 05
+
+"use strict" likhte se jisse saara code new js code ki tarah treat kia jaaye , waise ab ye likhne ki 
+jarurat nhi pdti lekin iska mtlb yahi hota hai
+
+ecma script - defines rules(standards) to write javascripts , and rules for the browser that how should 
+javascript be rendered
+
+Datatypes :
+    number
+    bigint
+    string                          primitive Datatypes
+    boolean 
+    null => an empty value
+    undefined 
+    symbol
+
+
+    objects                         non-primitive Datatype
+
+
+    console.log(typeof undefined)    -> undefined
+    console.log(typeof null)         -> object
+
+
+
+                                        Lecture - 06
+
+    Datatypes conversion :
+    let score = "Arpit"
+
+    console.log(typeof score)       ->string
+    console.log(typeof(score))      ->string
+
+    let toNumber = Number(score)    
+    consloe.log(typeof toNumber)    -> Nan
+
+    typeof Nan -> number 
+
+
+                                        Lecture - 07
+
+
+                                        Lecture - 08
+
+    Comparisions :
+
+    console.log(null > 0)           -> false
+    console.log(null == 0)           -> false       
+    console.log(null >= 0)           -> true
+        ---> comparsion aur equality different tarah se kaam krte hai , equality null ko as a number which
+             is 0 treat krta hai isliye third me true aaya but equality aisa nhi krta
+
+    but undefined me sabme false hi deta hai
+
+
+                                        Lecture - 09
+
+    Datatype -> Symbol
+
+    it is defined as 
+        const id = Symbol('123')
+        const anotherId = Symbol('123')
+
+        consle.log(id === anotherId)   => false , value same but symbol hamesha alag hote hai
+
+                                        
+                                        Lecture - 10
+
+    Primitive Datatypes - stack memory use krte hai
+    Non-Primitive Datatypes(Reference Datatypes) - heap memory use krte hai
