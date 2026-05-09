@@ -413,6 +413,172 @@
         // isme semicolon bhi use krna hota hai to pause context
 
         // eg : 
-        (function(){
-            console.log("DB connected")
-        })();
+        // (function(){
+        //     console.log("DB connected")
+        // })();
+
+
+
+
+                                        // Lecture - 25
+
+                                    //JavaScript Execution Context
+                            
+    // Js me code execute kaise hota hai uss baare me hai ye lecture
+
+    // Do main execution context hote hai 
+    // 1 - Global Execution Context (isko this se denote krte hai)
+    // 2 - Functional Execution Context
+    // 3 - Eval Execution Context (Mongoose wagera ki documentation me dia hota hai , 
+    //                              waise ye ek global ki hi property hai)
+    
+    // Js code do phase me run hota hai  : 1 - Memory Creation Phase
+    //                                     2 - Execution Phase
+
+
+                                        // Lecture - 26
+                                        // Control Flow
+    
+    // If else k baare me pda
+    // Switch case k baare me : agar break use nhi kroge to jiss case se value match ho jaati hai to uske 
+    // aage ka saara code run krr jaata hai isliye break use krte hai
+
+    // Truthy and Falsy Values
+    // let mail = "arpit@gmail.com"
+    // if(mail){
+    //     console.log("Mail present")
+    // }
+    // else{
+    //     console.log("mail not present")
+    // }
+
+    // falsy values :- false , 0 , -0 , BigInt 0n , "" , null , undefined , NaN
+
+    // empty array truthy hoti hai
+
+    // some truthy values which can confuse
+    // "0" , "false" , " " , [] , {} , function(){}
+
+    // array empty hai to kaise condition lgau
+    // let arr = []
+    // if(arr.length===0){
+    //     console.log("Array is empty")
+    // }
+
+    // array empty hai to kaise condition lgau
+    // let obj = {}
+    // if(Object.keys(obj).length===0){
+    //     console.log("Object is empty")
+    // }
+
+
+    // ---------- Nullish Coalecing Operator(??) : Null , Undefined ----------
+
+    // ye use me aata hai jbb database wagera se data maga rhe ho aur null ya undefined return me 
+    // aajaye to application crash naa kre uske liye , agar aajata hai to ye another given value 
+    // assign krdeta hai 
+
+    // let num = null ?? 10 // now first value is null so it assign 10 to num
+    // console.log(num)
+
+
+    // Terniary Operator --- dekhne me thoda aisa hi lgta hai so dont confuse
+    //          condition ? true : false 
+    // let price = 80
+    // price > 60 ? console.log("Price > 60") : console.log("Price < 60")
+
+
+
+                                        // Lecture - 27
+            // Lecture is about for loop , break and continue
+
+
+
+                                        // Lecture - 28 
+            // Lecture is about while and do-while loop
+
+
+
+                                        // Lecture - 29
+    
+    // Array specific loops 
+    // 1 - for-of loop
+    // const arr = [1,2,3,4,5]
+    // for(const num of arr){                   // for-of can be used for iterating arrays , strings
+    //     console.log(num)
+    // }
+    // const obj = {1:"a",2:"b",3:"c"}
+    // for(const ob of obj){                    // error , for-of is not for object
+    //     console.log(ob)
+    // }
+
+
+    // Maps
+    // const map = new Map()
+    // map.set("IN","India")
+    // map.set("USA","America")
+    // map.set("Fr","France")
+    // map.set("IN","India")
+    //console.log(map)           // Map(3) { 'IN' => 'India', 'USA' => 'America', 'Fr' => 'France' }
+                                // Map duplicate remove rdeta hai
+
+    // agar for-of se map print kroge to pura hi aajayega
+    //for(let key of map){
+    //    console.log(key)             //[ 'IN', 'India' ]      
+    //    }                            //[ 'USA', 'America' ]
+                                       //[ 'Fr', 'France' ]
+    
+    // agar key value dono pe control chahiye then
+    // for(let [key , value] of map){
+    //     console.log(`${key} : ${value}`)        // ye object prr kaam nhi krega
+    // }
+
+
+    //ojects kaise iterate honge -- for-in loop se
+
+    // let obj = {in : "india" , us : "england" , usa : "america"}
+    // for(let key in obj){
+    //     console.log(`${key} : ${obj[key]}`)
+    // }
+    //this loop also works for arrays but key acces keys(index)
+    // map iterable nhi hai isliye isse print nhi hoga
+
+
+    // for-each loop
+    //const arr = [1,2,3,4,5]
+    //arr.forEach((e)=>console.log(e))
+
+    // for each k paas sirf element ka access nhi hota , index aur arr ka bhi access hota hai
+    //arr.forEach((element,index,arr)=>{console.log(element+" "+index+" "+arr)})
+
+
+
+                                            // Lecture - 30
+
+
+    // hamne pichle lecture me for-each loop pda tha jo har ek element access krr skta tha but agar 
+    // element return krne ho to nhi krr skta (nhi krta hai) , to return krne k liye ham use krte 
+    // hai filter ka like
+    let arr = [1,2,3,4,5]
+    // let modifiedArr = arr.filter((e)=>(2*e))
+    // console.log(modifiedArr)
+
+
+    // map function
+    //let modifiedArr = arr.map((e)=>e+10)
+    //console.log(modifiedArr)
+
+    // functions ki chaining bhi krr skte ho like
+    // let modifiedArr = arr
+    //                 .map((e)=>e*10)
+    //                 .map((e)=>e+1)              // chaining of functions
+    //                 .filter((e)=>e>20)
+    // console.log(modifiedArr)
+
+    // Reduce function : array k elements add krne k liye use krte hai
+    let sum = arr.reduce((accumulator,currentValue)=>accumulator+currentValue,0)
+    console.log(sum)
+
+    // reduce function ek callback leta hai aur ek initiator , call me do argument paas krte hai
+    // accumulator and currentValue ,accumulator stating me initiator k equal hota hai but baad me 
+    // update hota rehta hai according to answer
